@@ -1,0 +1,15 @@
+package br.senai.sp.automatcaoteste1;
+
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class HomeTest {
+	@Test
+	public void navGoogleTeste () {
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chrome-driver\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		
+	}
+}

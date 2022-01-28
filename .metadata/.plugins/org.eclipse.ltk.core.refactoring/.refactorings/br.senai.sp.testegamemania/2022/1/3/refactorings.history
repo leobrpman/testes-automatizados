@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;br.senai.sp.testegamemania&apos;&#x0D;&#x0A;- Original project: &apos;br.senai.sp.testegamemania&apos;&#x0D;&#x0A;- Original element: &apos;br.senai.sp.testegamemania/src/test/java/br.senai.sp.testegamemania&apos;" description="Delete element" element1="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;br.senai.sp.testegamemania" element2="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;br.senai.sp" element3="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;br.senai" element4="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;br" elements="4" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1642279368476" subPackages="false" version="1.0"/>
+</session>

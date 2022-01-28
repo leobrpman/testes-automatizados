@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="HomeTest" project="br.senai.sp.automatcaoteste1" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="br.senai.sp.automatcaoteste1.HomeTest" time="6.423">
+    <testcase name="NavGoogleTeste" classname="br.senai.sp.automatcaoteste1.HomeTest" time="6.423"/>
+  </testsuite>
+</testrun>

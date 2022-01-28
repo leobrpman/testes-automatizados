@@ -1,0 +1,64 @@
+package br.senai.sp.testegamemania;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LoginTest {
+	private WebDriver driver;
+	
+	@Before
+	public void SetUpTestGM() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chrome-driver\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+	
+	}
+	
+	@Test
+	public void LoginTestGM () throws InterruptedException {
+		driver.get("http://localhost:4200/");
+		Thread.sleep(3000);
+		String path = "/html/body/app-root/app-home/header/div[1]/nav/a[2]";
+		WebElement input = driver.findElement(By.xpath(path));
+		input.click();
+		
+		// Primeiro teste: senha incorreta
+		driver.findElement(By.id("email")).sendKeys("leonardo@email.com");
+		driver.findElement(By.id("password")).sendKeys("discodefreio");
+		driver.findElement(By.xpath("/html/body/app-root/app-login/main/form/button")).click();	
+		WebElement message1 = driver.findElement(By.xpath("/html/body/app-root/app-login/main/p"));		
+		System.out.println(message1.getText());
+		
+		// Segundo teste: email não encontrado
+		driver.findElement(By.id("email")).clear();
+		driver.findElement(By.id("password")).clear();
+		driver.findElement(By.id("email")).sendKeys("leonardo@gmail.com");
+		driver.findElement(By.id("password")).sendKeys("batatagratinada");
+		driver.findElement(By.xpath("/html/body/app-root/app-login/main/form/button")).click();	
+		WebElement message2 = driver.findElement(By.xpath("/html/body/app-root/app-login/main/p"));	
+		System.out.println(message2.getText());
+		
+		// Terceiro teste: sucesso no login
+		driver.findElement(By.id("email")).clear();
+		driver.findElement(By.id("password")).clear();
+		driver.findElement(By.id("email")).sendKeys("leonardo@email.com");
+		driver.findElement(By.id("password")).sendKeys("batatagratinada");
+		driver.findElement(By.xpath("/html/body/app-root/app-login/main/form/button")).click();
+		Thread.sleep(3000);
+		WebElement message3 = driver.findElement(By.xpath("/html/body/app-root/app-login/main/p"));	
+		System.out.println(message3.getText());
+		// O texto exibido é "Você está logado!", não "Cannot find user" como no console.
+	}
+	
+//	@After
+//	public void CloseWindow () {
+//		driver.close();
+//	}
+}
